@@ -2,27 +2,28 @@
 
 <script async src="opencv.js" type="text/javascript"></script>
 <html>
+
 <body>
 
     <script type="text/javascript">
         // Our JavaScript code will go here
-        window.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener("DOMContentLoaded", function () {
 
-        // Elements for taking the snapshot
-var canvas = document.getElementById('canvas');
-//var context = canvas.getContext('2d');
-var video = document.getElementById('video');
-        var video = document.getElementById('video');
+            // Elements for taking the snapshot
+            var canvas = document.getElementById('canvas');
+            //var context = canvas.getContext('2d');
+            var video = document.getElementById('video');
+            var video = document.getElementById('video');
 
-// Get access to the camera!
-if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    // Not adding `{ audio: true }` since we only want video now
-    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-        //video.src = window.URL.createObjectURL(stream);
-        video.srcObject = stream;
-        video.play();
-    });
-}
+            // Get access to the camera!
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                // Not adding `{ audio: true }` since we only want video now
+                navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+                    //video.src = window.URL.createObjectURL(stream);
+                    video.srcObject = stream;
+                    video.play();
+                });
+            }
         })
 
 
@@ -33,10 +34,11 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
     </script>
 
-<h1>Hello World</h1>
-<p>You can play with your phone</p>
-<video id="video" width="640" height="480" autoplay></video>
-<button id="snap">Snap Photo</button>
-<canvas id="canvas" width="640" height="480"></canvas>
+    <h1>Hello World</h1>
+    <p>You can play with your phone</p>
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="snap">Snap Photo</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
 </body>
+
 </html>
